@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CA - Finance Projects Portfolio</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <style>
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+        }
+        .badge-ca {
+            background: #1e3a5f;
+            color: #fbbf24;
+        }
+        .project-iframe {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: white;
+        }
+        .section-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #e2e8f0, #3b82f6, #e2e8f0);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-gray-800">CA <span class="text-blue-700">Finance</span> Projects</h1>
+                <p class="text-sm text-gray-500">Semi-Qualified CA · 3 years Articleship · India Context</p>
+            </div>
+            <div class="flex gap-3 text-sm">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full"><i class="fas fa-code mr-1"></i> Python</span>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-file-excel mr-1"></i> Excel</span>
+                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full"><i class="fas fa-chart-pie mr-1"></i> Power BI</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+        <!-- Intro -->
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-10 border border-blue-100">
+            <h2 class="text-xl font-semibold text-gray-800"><i class="fas fa-bullseye text-blue-600 mr-2"></i>Portfolio Overview</h2>
+            <p class="text-gray-600 mt-1">8 hands-on finance projects built with Indian data (NSE, RBI, Screener.in). Each project demonstrates financial modeling, data analytics, or FP&A skills — tailored for a CA's skillset.</p>
+            <div class="flex flex-wrap gap-2 mt-3">
+                <span class="badge-ca text-xs px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> GST & Tax Impact</span>
+                <span class="badge-ca text-xs px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Ind AS / IFRS</span>
+                <span class="badge-ca text-xs px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> SEBI Compliance</span>
+            </div>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- CARD for Project #6 - COMPLETED -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">FP&A</span>
+                        <span class="text-xs text-gray-400">#6 ✅</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">Budget vs. Actual Dashboard</h3>
+                    <p class="text-sm text-gray-500 mt-1">Indian FMCG regional sales variance with GST impact analysis.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Excel</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Power BI</span>
+                        <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">✓ Completed</span>
+                    </div>
+                    <a href="#project6" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Dashboard →</a>
+                </div>
+            </div>
+
+            <!-- CARD for Project #7 -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-green-500 to-teal-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">CorpFin</span>
+                        <span class="text-xs text-gray-400">#7</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">Peer Benchmarking</h3>
+                    <p class="text-sm text-gray-500 mt-1">TCS, Infosys, Wipro vs. Accenture — ratio analysis.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Screener.in</span>
+                    </div>
+                    <a href="#project7" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+                </div>
+            </div>
+
+            <!-- CARD for Project #8 -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded">Equity</span>
+                        <span class="text-xs text-gray-400">#8</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">DuPont ROE Decomposition</h3>
+                    <p class="text-sm text-gray-500 mt-1">HUL vs. Nestle India — what drives their ROE?</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Excel</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Tijori</span>
+                    </div>
+                    <a href="#project8" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+                </div>
+            </div>
+
+            <!-- CARD for Project #9 -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-yellow-500 to-orange-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-yellow-600 bg-yellow-50 px-2 py-1 rounded">Modeling</span>
+                        <span class="text-xs text-gray-400">#9</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">Capital Budgeting (NPV/IRR)</h3>
+                    <p class="text-sm text-gray-500 mt-1">Adani Green Energy solar project with tax-benefit modeling.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Excel</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Sensitivity</span>
+                    </div>
+                    <a href="#project9" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+                </div>
+            </div>
+
+            <!-- CARD for Project #10 -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-red-500 to-rose-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-red-600 bg-red-50 px-2 py-1 rounded">Valuation</span>
+                        <span class="text-xs text-gray-400">#10</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">FCF Forecasting Model</h3>
+                    <p class="text-sm text-gray-500 mt-1">Reliance Industries 3-year FCF projection.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">SEC/EDGAR</span>
+                    </div>
+                    <a href="#project10" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+                </div>
+            </div>
+
+            <!-- CARD for Project #11 -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-indigo-500 to-violet-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">FinTech</span>
+                        <span class="text-xs text-gray-400">#11</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">Python Portfolio Tracker</h3>
+                    <p class="text-sm text-gray-500 mt-1">Nifty 50 stocks — live prices, Sharpe ratio, volatility.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">yfinance</span>
+                    </div>
+                    <a href="#project11" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+                </div>
+            </div>
+
+            <!-- CARD for Project #13 -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-emerald-500 to-green-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">BI</span>
+                        <span class="text-xs text-gray-400">#13</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">Power BI Dashboard</h3>
+                    <p class="text-sm text-gray-500 mt-1">State-wise GST collection & banking health dashboard.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Power BI</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">RBI DBIE</span>
+                    </div>
+                    <a href="#project13" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+                </div>
+            </div>
+
+            <!-- CARD for Project #17 -->
+            <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-slate-600 to-gray-400"></div>
+                <div class="p-5">
+                    <div class="flex justify-between items-start">
+                        <span class="text-xs font-semibold text-slate-600 bg-slate-50 px-2 py-1 rounded">Research</span>
+                        <span class="text-xs text-gray-400">#17</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800 mt-2">Sector Deep-Dive Report</h3>
+                    <p class="text-sm text-gray-500 mt-1">Indian EV ecosystem — TAM, key players, PLI impact.</p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">Report</span>
+                        <span class="text-xs bg-gray-100 px-2 py-1 rounded">NITI Aayog</span>
+                    </div>
+                    <a href="#project17" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- PROJECT DETAILS SECTIONS                    -->
+        <!-- ========================================== -->
+
+        <hr class="section-divider" />
+
+        <!-- PROJECT #6 DETAIL - DUAL DASHBOARD (BUDGET VS ACTUAL + LIVE DATA) -->
+<section id="project6" class="scroll-mt-20">
+    <div class="flex items-center gap-3 mb-4">
+        <span class="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded">#6 ✅</span>
+        <h2 class="text-2xl font-bold text-gray-800">Budget vs. Actual & Live Company Simulation</h2>
+    </div>
+    <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+        <span><i class="fas fa-map-pin text-blue-500 mr-1"></i> FP&A + Real Data</span>
+        <span><i class="fas fa-file-invoice text-blue-500 mr-1"></i> Variance Analysis & Live Metrics</span>
+        <span><i class="fas fa-code text-blue-500 mr-1"></i> Python + Node.js + Screener.in</span>
+    </div>
+
+    <!-- Project Description -->
+    <div class="bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+        <p class="text-gray-700 text-sm">
+            <strong>Objective:</strong> This project demonstrates two critical finance skills: 
+            <strong>1) FP&A</strong> - Analyzing regional sales variance for an Indian FMCG company (simulated), and 
+            <strong>2) Data Integration</strong> - Pulling live financial data from Screener.in for TCS to simulate a "live company monitoring" dashboard.
+        </p>
+        <div class="mt-2 flex flex-wrap gap-4 text-xs">
+            <span class="bg-blue-50 text-blue-700 px-2 py-1 rounded"><i class="fas fa-database mr-1"></i> Dashboard 1: Budget vs Actual (FMCG)</span>
+            <span class="bg-green-50 text-green-700 px-2 py-1 rounded"><i class="fas fa-chart-line mr-1"></i> Dashboard 2: Live Company Data (TCS)</span>
+            <span class="bg-yellow-50 text-yellow-700 px-2 py-1 rounded"><i class="fas fa-lightbulb mr-1"></i> CA Insight: Variance drivers + Live valuation</span>
+        </div>
+    </div>
+
+    <!-- TABBED DASHBOARD INTERFACE -->
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+        <!-- Tab Buttons -->
+        <div class="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap gap-2">
+            <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-button active px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white shadow-sm hover:bg-blue-700 transition">
+                <i class="fas fa-chart-simple mr-1"></i> Budget vs Actual (FP&A)
+            </button>
+            <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-button px-4 py-2 text-sm font-medium rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                <i class="fas fa-database mr-1"></i> Live Company Simulation
+            </button>
+            <span class="ml-auto text-xs text-gray-400 self-center">
+                <i class="fas fa-arrows-alt-h mr-1"></i> Click to switch views
+            </span>
+        </div>
+
+        <!-- Tab Content: Budget vs Actual -->
+        <div id="tab1" class="tab-content">
+            <div class="p-2">
+                <div class="bg-blue-50 border-b border-blue-100 px-3 py-1 text-xs text-blue-700 flex justify-between">
+                    <span><i class="fas fa-info-circle mr-1"></i> Simulated FMCG data (Soaps & Detergents) with GST impact analysis</span>
+                    <a href="projects/dashboard_project6.html" target="_blank" class="text-blue-600 hover:underline">Open full page</a>
+                </div>
+                <iframe src="projects/dashboard_project6.html" class="project-iframe" style="height:650px;"></iframe>
+            </div>
+        </div>
+
+        <!-- Tab Content: Live Company Simulation -->
+        <div id="tab2" class="tab-content" style="display:none;">
+            <div class="p-2">
+                <div class="bg-green-50 border-b border-green-100 px-3 py-1 text-xs text-green-700 flex justify-between">
+                    <span><i class="fas fa-check-circle mr-1"></i> Real data from Screener.in (TCS) — Market Cap, P/E, ROE, Peer Comparison</span>
+                    <a href="projects/dashboard_project6_real.html" target="_blank" class="text-green-600 hover:underline">Open full page</a>
+                </div>
+                <iframe src="projects/dashboard_project6_real.html" class="project-iframe" style="height:650px;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download / Tech Stack -->
+    <div class="flex flex-wrap gap-4 mt-4 items-center">
+        <div class="flex gap-2">
+            <a href="projects/dashboard_project6.html" download class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                <i class="fas fa-download"></i> Download FP&A Dashboard
+            </a>
+            <a href="projects/dashboard_project6_real.html" download class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-3 py-2 rounded-lg transition">
+                <i class="fas fa-download"></i> Download Live Dashboard
+            </a>
+        </div>
+        <span class="text-xs text-gray-500">
+            <i class="fas fa-code mr-1"></i> Tech: Python, Pandas, Node.js, Screener.in API ·
+            <a href="#" class="text-blue-600 hover:underline">View Source Code</a>
+        </span>
+    </div>
+
+    <div class="mt-6">
+        <a href="#" class="text-sm text-blue-600 hover:underline"><i class="fas fa-arrow-up mr-1"></i> Back to top</a>
+    </div>
+</section>
+
+<hr class="section-divider" />
+
+        <!-- PROJECT #7 placeholder -->
+        <section id="project7" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded">#7</span>
+                <h2 class="text-2xl font-bold text-gray-800">Peer Benchmarking</h2>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> <strong>Coming next:</strong> Ready to build this project? Just say <em>"Move to #7"</em> and I'll give you the Python code to pull live data from Screener.in/yfinance!</p>
+            </div>
+        </section>
+
+        <!-- PROJECT #8 placeholder -->
+        <section id="project8" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-purple-600 text-white text-sm font-bold px-3 py-1 rounded">#8</span>
+                <h2 class="text-2xl font-bold text-gray-800">DuPont ROE Decomposition</h2>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> Will be added after #7.</p>
+            </div>
+        </section>
+
+        <!-- PROJECT #9 placeholder -->
+        <section id="project9" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-yellow-600 text-white text-sm font-bold px-3 py-1 rounded">#9</span>
+                <h2 class="text-2xl font-bold text-gray-800">Capital Budgeting (NPV/IRR)</h2>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> Will be added after #8.</p>
+            </div>
+        </section>
+
+        <!-- PROJECT #10 placeholder -->
+        <section id="project10" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-red-600 text-white text-sm font-bold px-3 py-1 rounded">#10</span>
+                <h2 class="text-2xl font-bold text-gray-800">FCF Forecasting Model</h2>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> Will be added after #9.</p>
+            </div>
+        </section>
+
+        <!-- PROJECT #11 placeholder -->
+        <section id="project11" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-indigo-600 text-white text-sm font-bold px-3 py-1 rounded">#11</span>
+                <h2 class="text-2xl font-bold text-gray-800">Python Portfolio Tracker</h2>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> Will be added after #10.</p>
+            </div>
+        </section>
+
+        <!-- PROJECT #13 placeholder -->
+        <section id="project13" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-emerald-600 text-white text-sm font-bold px-3 py-1 rounded">#13</span>
+                <h2 class="text-2xl font-bold text-gray-800">Power BI Dashboard</h2>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> Will be added after #11.</p>
+            </div>
+        </section>
+
+        <!-- PROJECT #17 placeholder -->
+        <section id="project17" class="scroll-mt-20">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-slate-600 text-white text-sm font-bold px-3 py-1 rounded">#17</span>
+                <h2 class="text-2xl font-bold text-gray-800">Sector Deep-Dive Report</h2>
+            </div>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> Will be added after #13.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-20 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+            <p>Built with <i class="fas fa-heart text-red-400"></i> by a Semi-Qualified CA · All projects use Indian data sources</p>
+            <p class="mt-1">© 2026 · <a href="#" class="text-blue-600 hover:underline">LinkedIn</a> · <a href="#" class="text-blue-600 hover:underline">GitHub</a></p>
+        </footer>
+
+    </main>
+<script>
+    function switchTab(tabId) {
+        // Hide all tab contents
+        document.querySelectorAll('.tab-content').forEach(function(el) {
+            el.style.display = 'none';
+        });
+        // Remove active class from all buttons
+        document.querySelectorAll('.tab-button').forEach(function(el) {
+            el.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+            el.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        // Show selected tab
+        document.getElementById(tabId).style.display = 'block';
+        // Activate selected button
+        var btn = document.getElementById('btn-' + tabId);
+        btn.classList.remove('bg-gray-200', 'text-gray-700');
+        btn.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+    }
+</script>
+</body>
+</html>

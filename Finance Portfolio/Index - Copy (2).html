@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CA - Finance Projects Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .project-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15); }
+        .badge-ca { background: #1e3a5f; color: #fbbf24; }
+        .section-divider { border: none; height: 2px; background: linear-gradient(to right, #e2e8f0, #3b82f6, #e2e8f0); margin: 40px 0; }
+        .tab-button { transition: all 0.2s; }
+        .tab-content { animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .kpi-card { transition: transform 0.2s; }
+        .kpi-card:hover { transform: scale(1.02); }
+        .insight-box { background: #fffbeb; border-left: 4px solid #f59e0b; }
+        .spinner {
+            border: 4px solid #e5e7eb;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+<header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-wrap justify-between items-center">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-800">CA <span class="text-blue-700">Finance</span> Projects</h1>
+            <p class="text-sm text-gray-500">Semi-Qualified CA · 3 years Articleship · India Context</p>
+        </div>
+        <div class="flex gap-3 text-sm flex-wrap">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full"><i class="fas fa-code mr-1"></i> Python</span>
+            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full"><i class="fas fa-file-excel mr-1"></i> Excel</span>
+            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full"><i class="fas fa-chart-pie mr-1"></i> Power BI</span>
+        </div>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <!-- Intro -->
+    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-10 border border-blue-100">
+        <h2 class="text-xl font-semibold text-gray-800"><i class="fas fa-bullseye text-blue-600 mr-2"></i>Portfolio Overview</h2>
+        <p class="text-gray-600 mt-1">8 hands-on finance projects built with Indian data. Each project demonstrates financial modeling, data analytics, or FP&A skills — tailored for a CA's skillset.</p>
+        <div class="flex flex-wrap gap-2 mt-3">
+            <span class="badge-ca text-xs px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> GST & Tax Impact</span>
+            <span class="badge-ca text-xs px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> Ind AS / IFRS</span>
+            <span class="badge-ca text-xs px-3 py-1 rounded-full"><i class="fas fa-check-circle mr-1"></i> SEBI Compliance</span>
+        </div>
+    </div>
+
+    <!-- Project Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card #6 -->
+        <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+            <div class="p-5">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">FP&A</span>
+                    <span class="text-xs text-gray-400">#6 ✅</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mt-2">Budget vs Actual Dashboard</h3>
+                <p class="text-sm text-gray-500 mt-1">Complete P&L variance analysis with 12 months of data.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">JavaScript</span>
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Chart.js</span>
+                    <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">✓ Completed</span>
+                </div>
+                <a href="#project6" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Dashboard →</a>
+            </div>
+        </div>
+        <!-- Card #7 -->
+        <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="h-2 bg-gradient-to-r from-green-500 to-teal-400"></div>
+            <div class="p-5">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">CorpFin</span>
+                    <span class="text-xs text-gray-400">#7</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mt-2">Peer Benchmarking</h3>
+                <p class="text-sm text-gray-500 mt-1">TCS, Infosys, Wipro vs. Accenture — ratio analysis.</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Python</span>
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Screener.in</span>
+                </div>
+                <a href="#project7" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+            </div>
+        </div>
+        <!-- Card #8 -->
+        <div class="project-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+            <div class="h-2 bg-gradient-to-r from-purple-500 to-pink-400"></div>
+            <div class="p-5">
+                <div class="flex justify-between items-start">
+                    <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded">Equity</span>
+                    <span class="text-xs text-gray-400">#8</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 mt-2">DuPont ROE Decomposition</h3>
+                <p class="text-sm text-gray-500 mt-1">HUL vs. Nestle India — what drives their ROE?</p>
+                <div class="mt-4 flex flex-wrap gap-2">
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Excel</span>
+                    <span class="text-xs bg-gray-100 px-2 py-1 rounded">Tijori</span>
+                </div>
+                <a href="#project8" class="mt-4 inline-block text-sm font-medium text-blue-600 hover:text-blue-800">View Details →</a>
+            </div>
+        </div>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- PROJECT #6 DETAIL -->
+    <section id="project6" class="scroll-mt-20">
+        <div class="flex items-center gap-3 mb-4 flex-wrap">
+            <span class="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded">#6 ✅</span>
+            <h2 class="text-2xl font-bold text-gray-800">Budget vs. Actual — Comprehensive FP&A Dashboard</h2>
+            <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full"><i class="fas fa-check-circle text-green-500 text-[8px] mr-1"></i> 12 Months · 5 Regions · 3 Products</span>
+        </div>
+
+        <!-- Controls -->
+        <div class="bg-gray-50 rounded-xl p-4 mb-6 border border-gray-200">
+            <div class="flex flex-wrap items-center gap-4">
+                <div>
+                    <label class="text-sm font-medium text-gray-700 mr-2"><i class="fas fa-filter text-blue-500 mr-1"></i> Region:</label>
+                    <select id="regionFilter" onchange="renderAll()" class="border border-gray-300 rounded-lg px-3 py-1.5 text-sm">
+                        <option value="All">All Regions</option>
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700 mr-2"><i class="fas fa-tag text-blue-500 mr-1"></i> Product:</label>
+                    <select id="productFilter" onchange="renderAll()" class="border border-gray-300 rounded-lg px-3 py-1.5 text-sm">
+                        <option value="All">All Products</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Apparel">Apparel</option>
+                        <option value="Food">Food</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-700 mr-2"><i class="fas fa-calendar text-blue-500 mr-1"></i> Month:</label>
+                    <select id="monthFilter" onchange="renderAll()" class="border border-gray-300 rounded-lg px-3 py-1.5 text-sm">
+                        <option value="All">All Months</option>
+                        <option value="Jan">January</option>
+                        <option value="Feb">February</option>
+                        <option value="Mar">March</option>
+                        <option value="Apr">April</option>
+                        <option value="May">May</option>
+                        <option value="Jun">June</option>
+                        <option value="Jul">July</option>
+                        <option value="Aug">August</option>
+                        <option value="Sep">September</option>
+                        <option value="Oct">October</option>
+                        <option value="Nov">November</option>
+                        <option value="Dec">December</option>
+                    </select>
+                </div>
+                <button onclick="resetFilters()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-3 py-1.5 rounded-lg text-sm transition">
+                    <i class="fas fa-undo mr-1"></i> Reset
+                </button>
+                <span class="text-xs text-gray-400 ml-auto"><i class="fas fa-database mr-1"></i> Data generated dynamically</span>
+            </div>
+
+            <!-- NEW: Template Download Section -->
+            <div class="flex flex-wrap items-center gap-3 mt-4 pt-4 border-t border-gray-200">
+                <span class="text-sm font-medium text-gray-700"><i class="fas fa-download text-blue-500 mr-1"></i> Download Templates (CSV):</span>
+                <button onclick="downloadTemplate('actual')" class="bg-blue-50 hover:bg-blue-100 text-blue-700 text-sm px-3 py-1.5 rounded-lg border border-blue-200 transition">
+                    <i class="fas fa-file-invoice mr-1"></i> Actual Data Template
+                </button>
+                <button onclick="downloadTemplate('budget')" class="bg-green-50 hover:bg-green-100 text-green-700 text-sm px-3 py-1.5 rounded-lg border border-green-200 transition">
+                    <i class="fas fa-file-invoice mr-1"></i> Budget Data Template
+                </button>
+                <span class="text-xs text-gray-400 ml-auto"><i class="fas fa-info-circle mr-1"></i> Fill with your data and upload (coming soon)</span>
+            </div>
+        </div>
+
+        <!-- Loading indicator -->
+        <div id="loadingIndicator" class="text-center py-10">
+            <div class="spinner mx-auto"></div>
+            <p class="text-gray-500 mt-2">Generating financial data...</p>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboardContent" style="display:none;">
+
+            <!-- KPI Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6" id="kpiRow">
+                <!-- Dynamic KPIs rendered by JS -->
+            </div>
+
+            <!-- Tabs -->
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                <div class="bg-gray-50 px-4 py-2 border-b border-gray-200 flex flex-wrap gap-2">
+                    <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-button active px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white shadow-sm hover:bg-blue-700 transition">
+                        <i class="fas fa-chart-bar mr-1"></i> Variance Summary
+                    </button>
+                    <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-button px-4 py-2 text-sm font-medium rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                        <i class="fas fa-chart-line mr-1"></i> Trends
+                    </button>
+                    <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-button px-4 py-2 text-sm font-medium rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                        <i class="fas fa-table mr-1"></i> Detailed Table
+                    </button>
+                    <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-button px-4 py-2 text-sm font-medium rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                        <i class="fas fa-lightbulb mr-1"></i> My Insights
+                    </button>
+                </div>
+
+                <!-- Tab 1: Variance Summary -->
+                <div id="tab1" class="tab-content p-4">
+                    <div id="varianceSummary"></div>
+                </div>
+
+                <!-- Tab 2: Trends -->
+                <div id="tab2" class="tab-content p-4" style="display:none;">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div><canvas id="salesChart"></canvas></div>
+                        <div><canvas id="marginChart"></canvas></div>
+                        <div class="lg:col-span-2"><canvas id="varianceChart"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Detailed Table -->
+                <div id="tab3" class="tab-content p-4" style="display:none;">
+                    <div id="detailedTable" class="overflow-x-auto"></div>
+                </div>
+
+                <!-- Tab 4: My Insights (formerly CA Insights) -->
+                <div id="tab4" class="tab-content p-4" style="display:none;">
+                    <div id="insightsContent" class="space-y-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <a href="#" class="text-sm text-blue-600 hover:underline"><i class="fas fa-arrow-up mr-1"></i> Back to top</a>
+        </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- Other Projects -->
+    <section id="project7" class="scroll-mt-20">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="bg-green-600 text-white text-sm font-bold px-3 py-1 rounded">#7</span>
+            <h2 class="text-2xl font-bold text-gray-800">Peer Benchmarking</h2>
+        </div>
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+            <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> <strong>Coming next:</strong> Ready to build? Say <em>"Move to #7"</em></p>
+        </div>
+    </section>
+
+    <section id="project8" class="scroll-mt-20">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="bg-purple-600 text-white text-sm font-bold px-3 py-1 rounded">#8</span>
+            <h2 class="text-2xl font-bold text-gray-800">DuPont ROE Decomposition</h2>
+        </div>
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+            <p class="text-yellow-800 text-sm"><i class="fas fa-hourglass-half mr-2"></i> Will be added after #7.</p>
+        </div>
+    </section>
+
+    <footer class="mt-20 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+        <p>Built with <i class="fas fa-heart text-red-400"></i> by a Semi-Qualified CA · All projects use Indian data sources</p>
+        <p class="mt-1">© 2026 · <a href="#" class="text-blue-600 hover:underline">LinkedIn</a> · <a href="#" class="text-blue-600 hover:underline">GitHub</a></p>
+    </footer>
+
+</main>
+
+<script>
+    // ============================================================
+    // 1. DATA GENERATION (random, realistic, complete)
+    // ============================================================
+    const regions = ['North', 'South', 'East', 'West'];
+    const products = ['Electronics', 'Apparel', 'Food'];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+
+    function generateActualData() {
+        let data = [];
+        const year = 2024;
+        regions.forEach(region => {
+            products.forEach(product => {
+                months.forEach((month, idx) => {
+                    let base = (region === 'North' ? 220 : region === 'South' ? 200 : region === 'East' ? 180 : 240) * 10000;
+                    if (product === 'Electronics') base *= 1.2;
+                    else if (product === 'Food') base *= 0.9;
+                    let growth = 1 + (idx * 0.02);
+                    let sales = Math.round(base * growth * (0.85 + Math.random() * 0.3));
+                    sales = Math.round(sales / 1000) * 1000;
+
+                    const cogsPct = rand(50, 70) / 100;
+                    const cogs = Math.round(sales * cogsPct);
+
+                    const opEx = Math.round(sales * (rand(10, 20) / 100));
+                    const marketing = Math.round(opEx * rand(20, 40) / 100);
+                    const rnd = Math.round(opEx * rand(10, 20) / 100);
+                    const admin = opEx - marketing - rnd;
+
+                    const otherIncome = Math.round(sales * rand(1, 3) / 100);
+                    const interest = Math.round(sales * rand(1, 4) / 100);
+                    const taxRate = 0.25;
+
+                    data.push({
+                        Year: year,
+                        Month: month,
+                        Region: region,
+                        Product_Line: product,
+                        Sales: sales,
+                        Cost_of_Goods_Sold: cogs,
+                        Operating_Expenses: opEx,
+                        Marketing_Expenses: marketing,
+                        R_D_Expenses: rnd,
+                        Admin_Expenses: admin,
+                        Other_Income: otherIncome,
+                        Interest_Expense: interest,
+                        Tax_Rate: taxRate
+                    });
+                });
+            });
+        });
+        return data;
+    }
+
+    function generateBudgetData(actualData) {
+        return actualData.map(row => {
+            const variance = 1 + (rand(-10, 10) / 100);
+            const salesBudget = Math.round(row.Sales * variance / 1000) * 1000;
+            const cogsVariance = 1 + (rand(-8, 8) / 100);
+            const cogsBudget = Math.round(row.Cost_of_Goods_Sold * cogsVariance / 1000) * 1000;
+            const opexVariance = 1 + (rand(-5, 5) / 100);
+            const opexBudget = Math.round(row.Operating_Expenses * opexVariance / 1000) * 1000;
+            return {
+                Year: row.Year,
+                Month: row.Month,
+                Region: row.Region,
+                Product_Line: row.Product_Line,
+                Sales_Budget: salesBudget,
+                COGS_Budget: cogsBudget,
+                OpEx_Budget: opexBudget
+            };
+        });
+    }
+
+    // ============================================================
+    // 2. DATA LOADING
+    // ============================================================
+    let actualData = [];
+    let budgetData = [];
+
+    function loadData() {
+        const loading = document.getElementById('loadingIndicator');
+        const content = document.getElementById('dashboardContent');
+
+        actualData = generateActualData();
+        budgetData = generateBudgetData(actualData);
+
+        loading.style.display = 'none';
+        content.style.display = 'block';
+        renderAll();
+    }
+
+    // ============================================================
+    // 3. FILTERS & RENDERING
+    // ============================================================
+    function getFilters() {
+        return {
+            region: document.getElementById('regionFilter').value,
+            product: document.getElementById('productFilter').value,
+            month: document.getElementById('monthFilter').value
+        };
+    }
+
+    function resetFilters() {
+        document.getElementById('regionFilter').value = 'All';
+        document.getElementById('productFilter').value = 'All';
+        document.getElementById('monthFilter').value = 'All';
+        renderAll();
+    }
+
+    function filterData(data, filters) {
+        return data.filter(row => {
+            if (filters.region !== 'All' && row.Region !== filters.region) return false;
+            if (filters.product !== 'All' && row.Product_Line !== filters.product) return false;
+            if (filters.month !== 'All' && row.Month !== filters.month) return false;
+            return true;
+        });
+    }
+
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.tab-button').forEach(el => {
+            el.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+            el.classList.add('bg-gray-200', 'text-gray-700');
+        });
+        document.getElementById(tabId).style.display = 'block';
+        const btn = document.getElementById('btn-' + tabId);
+        if (btn) {
+            btn.classList.remove('bg-gray-200', 'text-gray-700');
+            btn.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+        }
+        if (tabId === 'tab2') {
+            setTimeout(() => renderCharts(
+                filterData(actualData, getFilters()),
+                filterData(budgetData, getFilters())
+            ), 200);
+        }
+    }
+
+    // ============================================================
+    // 4. MAIN RENDER
+    // ============================================================
+    function renderAll() {
+        const filters = getFilters();
+        const filteredActual = filterData(actualData, filters);
+        const filteredBudget = filterData(budgetData, filters);
+
+        renderKPIs(filteredActual, filteredBudget);
+        renderVarianceSummary(filteredActual, filteredBudget);
+        renderTable(filteredActual, filteredBudget);
+        renderInsights(filteredActual, filteredBudget);
+    }
+
+    // ============================================================
+    // 5. KPI RENDER
+    // ============================================================
+    function renderKPIs(actual, budget) {
+        const totalSales = actual.reduce((sum, r) => sum + r.Sales, 0);
+        const totalBudgetSales = budget.reduce((sum, r) => sum + r.Sales_Budget, 0);
+        const totalCOGS = actual.reduce((sum, r) => sum + r.Cost_of_Goods_Sold, 0);
+        const totalOpEx = actual.reduce((sum, r) => sum + r.Operating_Expenses, 0);
+        const totalOtherIncome = actual.reduce((sum, r) => sum + r.Other_Income, 0);
+        const totalInterest = actual.reduce((sum, r) => sum + r.Interest_Expense, 0);
+        const grossProfit = totalSales - totalCOGS;
+        const netProfit = grossProfit - totalOpEx + totalOtherIncome - totalInterest;
+        const avgTaxRate = actual.length ? actual[0].Tax_Rate : 0.25;
+        const netProfitAfterTax = netProfit * (1 - avgTaxRate);
+
+        const salesVariance = totalSales - totalBudgetSales;
+        const salesVariancePct = totalBudgetSales ? (salesVariance / totalBudgetSales) * 100 : 0;
+
+        document.getElementById('kpiRow').innerHTML = `
+            <div class="kpi-card bg-blue-50 p-4 rounded-xl border border-blue-200">
+                <div class="text-xs text-blue-600 font-semibold uppercase">Total Sales</div>
+                <div class="text-2xl font-bold">₹${(totalSales/100000).toFixed(1)}L</div>
+                <div class="text-xs ${salesVariance >= 0 ? 'text-green-600' : 'text-red-600'}">
+                    ${salesVariance >= 0 ? '↑' : '↓'} ${Math.abs(salesVariancePct).toFixed(1)}% vs Budget
+                </div>
+            </div>
+            <div class="kpi-card bg-green-50 p-4 rounded-xl border border-green-200">
+                <div class="text-xs text-green-600 font-semibold uppercase">Gross Margin</div>
+                <div class="text-2xl font-bold">${totalSales ? ((grossProfit/totalSales)*100).toFixed(1) : 0}%</div>
+                <div class="text-xs text-gray-500">₹${(grossProfit/100000).toFixed(1)}L</div>
+            </div>
+            <div class="kpi-card bg-purple-50 p-4 rounded-xl border border-purple-200">
+                <div class="text-xs text-purple-600 font-semibold uppercase">Net Profit (AT)</div>
+                <div class="text-2xl font-bold ${netProfitAfterTax >= 0 ? 'text-green-600' : 'text-red-600'}">₹${(netProfitAfterTax/100000).toFixed(1)}L</div>
+                <div class="text-xs text-gray-500">Margin: ${totalSales ? ((netProfitAfterTax/totalSales)*100).toFixed(1) : 0}%</div>
+            </div>
+            <div class="kpi-card bg-yellow-50 p-4 rounded-xl border border-yellow-200">
+                <div class="text-xs text-yellow-700 font-semibold uppercase">OpEx / Sales</div>
+                <div class="text-2xl font-bold">${totalSales ? ((totalOpEx/totalSales)*100).toFixed(1) : 0}%</div>
+                <div class="text-xs text-gray-500">₹${(totalOpEx/100000).toFixed(1)}L</div>
+            </div>
+        `;
+    }
+
+    // ============================================================
+    // 6. VARIANCE SUMMARY
+    // ============================================================
+    function renderVarianceSummary(actual, budget) {
+        const monthOrder = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        const rows = monthOrder.map(m => {
+            const a = actual.filter(r => r.Month === m);
+            const b = budget.filter(r => r.Month === m);
+            const sales = a.reduce((s,r) => s + r.Sales, 0);
+            const budgetSales = b.reduce((s,r) => s + r.Sales_Budget, 0);
+            const cogs = a.reduce((s,r) => s + r.Cost_of_Goods_Sold, 0);
+            const opEx = a.reduce((s,r) => s + r.Operating_Expenses, 0);
+            const other = a.reduce((s,r) => s + r.Other_Income, 0);
+            const interest = a.reduce((s,r) => s + r.Interest_Expense, 0);
+            const gp = sales - cogs;
+            const np = gp - opEx + other - interest;
+            const taxRate = a.length ? a[0].Tax_Rate : 0.25;
+            const npAt = np * (1 - taxRate);
+            const variance = sales - budgetSales;
+            const variancePct = budgetSales ? (variance / budgetSales) * 100 : 0;
+            return { month: m, sales, budgetSales, variance, variancePct, gp, npAt };
+        });
+
+        let html = `
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-4 py-2 text-left font-semibold text-gray-600">Month</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-600">Actual Sales</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-600">Budget Sales</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-600">Variance (₹)</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-600">Variance %</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-600">Gross Profit</th>
+                            <th class="px-4 py-2 text-right font-semibold text-gray-600">Net Profit (AT)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-100">
+        `;
+
+        let totalActual = 0, totalBudget = 0;
+        rows.forEach(r => {
+            totalActual += r.sales;
+            totalBudget += r.budgetSales;
+            const vClass = r.variance >= 0 ? 'text-green-600' : 'text-red-600';
+            html += `
+                <tr>
+                    <td class="px-4 py-2 font-medium">${r.month}</td>
+                    <td class="px-4 py-2 text-right">₹${(r.sales/100000).toFixed(1)}L</td>
+                    <td class="px-4 py-2 text-right">₹${(r.budgetSales/100000).toFixed(1)}L</td>
+                    <td class="px-4 py-2 text-right ${vClass}">${r.variance >= 0 ? '+' : ''}${(r.variance/100000).toFixed(1)}L</td>
+                    <td class="px-4 py-2 text-right ${vClass}">${r.variancePct.toFixed(1)}%</td>
+                    <td class="px-4 py-2 text-right">₹${(r.gp/100000).toFixed(1)}L</td>
+                    <td class="px-4 py-2 text-right">₹${(r.npAt/100000).toFixed(1)}L</td>
+                </tr>
+            `;
+        });
+
+        const totalVar = totalActual - totalBudget;
+        const totalVarPct = totalBudget ? (totalVar / totalBudget) * 100 : 0;
+        html += `
+            <tr class="bg-gray-50 font-bold">
+                <td class="px-4 py-2">TOTAL</td>
+                <td class="px-4 py-2 text-right">₹${(totalActual/100000).toFixed(1)}L</td>
+                <td class="px-4 py-2 text-right">₹${(totalBudget/100000).toFixed(1)}L</td>
+                <td class="px-4 py-2 text-right ${totalVar >= 0 ? 'text-green-600' : 'text-red-600'}">${totalVar >= 0 ? '+' : ''}${(totalVar/100000).toFixed(1)}L</td>
+                <td class="px-4 py-2 text-right ${totalVar >= 0 ? 'text-green-600' : 'text-red-600'}">${totalVarPct.toFixed(1)}%</td>
+                <td class="px-4 py-2 text-right" colspan="2"></td>
+            </tr>
+        `;
+        html += `</tbody></table></div>`;
+        document.getElementById('varianceSummary').innerHTML = html;
+    }
+
+    // ============================================================
+    // 7. DETAILED TABLE
+    // ============================================================
+    function renderTable(actual, budget) {
+        if (!actual.length) {
+            document.getElementById('detailedTable').innerHTML = '<p class="text-gray-400 text-center py-8">No data for selected filters</p>';
+            return;
+        }
+
+        let html = `
+            <table class="min-w-full divide-y divide-gray-200 text-xs">
+                <thead class="bg-gray-50">
+                    <tr>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">Year</th>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">Month</th>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">Region</th>
+                        <th class="px-3 py-2 text-left font-semibold text-gray-600">Product</th>
+                        <th class="px-3 py-2 text-right font-semibold text-gray-600">Sales</th>
+                        <th class="px-3 py-2 text-right font-semibold text-gray-600">COGS</th>
+                        <th class="px-3 py-2 text-right font-semibold text-gray-600">Gross Profit</th>
+                        <th class="px-3 py-2 text-right font-semibold text-gray-600">OpEx</th>
+                        <th class="px-3 py-2 text-right font-semibold text-gray-600">Net Profit</th>
+                        <th class="px-3 py-2 text-right font-semibold text-gray-600">GM %</th>
+                        <th class="px-3 py-2 text-right font-semibold text-gray-600">NM %</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-100">
+        `;
+
+        actual.forEach(r => {
+            const gp = r.Sales - r.Cost_of_Goods_Sold;
+            const opEx = r.Operating_Expenses;
+            const np = gp - opEx + r.Other_Income - r.Interest_Expense;
+            const npAt = np * (1 - r.Tax_Rate);
+            const gm = r.Sales ? (gp/r.Sales)*100 : 0;
+            const nm = r.Sales ? (npAt/r.Sales)*100 : 0;
+
+            html += `
+                <tr>
+                    <td class="px-3 py-2">${r.Year}</td>
+                    <td class="px-3 py-2">${r.Month}</td>
+                    <td class="px-3 py-2">${r.Region}</td>
+                    <td class="px-3 py-2">${r.Product_Line}</td>
+                    <td class="px-3 py-2 text-right">₹${(r.Sales/1000).toFixed(0)}K</td>
+                    <td class="px-3 py-2 text-right">₹${(r.Cost_of_Goods_Sold/1000).toFixed(0)}K</td>
+                    <td class="px-3 py-2 text-right ${gp >= 0 ? 'text-green-600' : 'text-red-600'}">₹${(gp/1000).toFixed(0)}K</td>
+                    <td class="px-3 py-2 text-right">₹${(opEx/1000).toFixed(0)}K</td>
+                    <td class="px-3 py-2 text-right ${npAt >= 0 ? 'text-green-600' : 'text-red-600'}">₹${(npAt/1000).toFixed(0)}K</td>
+                    <td class="px-3 py-2 text-right">${gm.toFixed(1)}%</td>
+                    <td class="px-3 py-2 text-right ${nm >= 5 ? 'text-green-600' : nm >= 0 ? 'text-yellow-600' : 'text-red-600'}">${nm.toFixed(1)}%</td>
+                </tr>
+            `;
+        });
+
+        html += `</tbody></table>`;
+        document.getElementById('detailedTable').innerHTML = html;
+    }
+
+    // ============================================================
+    // 8. MY INSIGHTS (formerly CA Insights)
+    // ============================================================
+    function renderInsights(actual, budget) {
+        if (!actual.length) {
+            document.getElementById('insightsContent').innerHTML = '<p class="text-gray-400 text-center py-8">No data for selected filters</p>';
+            return;
+        }
+
+        const totalSales = actual.reduce((s,r) => s + r.Sales, 0);
+        const totalBudget = budget.reduce((s,r) => s + r.Sales_Budget, 0);
+        const totalCOGS = actual.reduce((s,r) => s + r.Cost_of_Goods_Sold, 0);
+        const totalOpEx = actual.reduce((s,r) => s + r.Operating_Expenses, 0);
+        const gp = totalSales - totalCOGS;
+        const np = gp - totalOpEx;
+        const avgTax = actual.length ? actual[0].Tax_Rate : 0.25;
+        const npAt = np * (1 - avgTax);
+
+        const regionSales = {};
+        actual.forEach(r => { regionSales[r.Region] = (regionSales[r.Region] || 0) + r.Sales; });
+        const sortedRegions = Object.entries(regionSales).sort((a,b) => b[1] - a[1]);
+        const bestRegion = sortedRegions[0]?.[0] || 'N/A';
+        const worstRegion = sortedRegions[sortedRegions.length-1]?.[0] || 'N/A';
+
+        const productSales = {};
+        actual.forEach(r => { productSales[r.Product_Line] = (productSales[r.Product_Line] || 0) + r.Sales; });
+        const bestProduct = Object.entries(productSales).sort((a,b) => b[1] - a[1])[0]?.[0] || 'N/A';
+
+        const variance = totalSales - totalBudget;
+        const varPct = totalBudget ? (variance/totalBudget)*100 : 0;
+
+        document.getElementById('insightsContent').innerHTML = `
+            <div class="insight-box p-5 rounded-lg border border-yellow-200">
+                <h4 class="font-semibold text-gray-800"><i class="fas fa-chart-simple text-yellow-500 mr-2"></i>My Analysis</h4>
+                <ul class="mt-2 space-y-2 text-sm text-gray-700">
+                    <li><strong>Total Sales:</strong> ₹${(totalSales/100000).toFixed(1)}L vs Budget ₹${(totalBudget/100000).toFixed(1)}L — <span class="${variance >= 0 ? 'text-green-600' : 'text-red-600'}">${variance >= 0 ? '↑' : '↓'} ${Math.abs(varPct).toFixed(1)}%</span></li>
+                    <li><strong>Gross Margin:</strong> ${totalSales ? ((gp/totalSales)*100).toFixed(1) : 0}% (₹${(gp/100000).toFixed(1)}L)</li>
+                    <li><strong>Net Profit After Tax:</strong> ₹${(npAt/100000).toFixed(1)}L — Margin: ${totalSales ? ((npAt/totalSales)*100).toFixed(1) : 0}%</li>
+                    <li><strong>OpEx / Sales Ratio:</strong> ${totalSales ? ((totalOpEx/totalSales)*100).toFixed(1) : 0}%</li>
+                </ul>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    <h4 class="font-semibold text-gray-800 text-sm"><i class="fas fa-trophy text-blue-500 mr-1"></i> Top Performers</h4>
+                    <ul class="mt-2 text-sm text-gray-700 space-y-1">
+                        <li><strong>Best Region:</strong> ${bestRegion} — ₹${(regionSales[bestRegion]/100000).toFixed(1)}L</li>
+                        <li><strong>Best Product:</strong> ${bestProduct}</li>
+                        ${varPct > 0 ? `<li><span class="text-green-600">✅ Sales exceeded budget by ${varPct.toFixed(1)}%</span></li>` : `<li><span class="text-red-600">⚠️ Sales below budget by ${Math.abs(varPct).toFixed(1)}%</span></li>`}
+                    </ul>
+                </div>
+                <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                    <h4 class="font-semibold text-gray-800 text-sm"><i class="fas fa-exclamation-triangle text-red-500 mr-1"></i> Areas of Concern</h4>
+                    <ul class="mt-2 text-sm text-gray-700 space-y-1">
+                        <li><strong>Worst Region:</strong> ${worstRegion} — ₹${(regionSales[worstRegion]/100000).toFixed(1)}L</li>
+                        <li><strong>OpEx Ratio:</strong> ${totalSales ? ((totalOpEx/totalSales)*100).toFixed(1) : 0}% ${totalSales ? ((totalOpEx/totalSales)*100 > 30 ? '⚠️ High' : '✅ Within range') : ''}</li>
+                        <li><strong>Net Margin:</strong> ${totalSales ? ((npAt/totalSales)*100).toFixed(1) : 0}% ${totalSales ? ((npAt/totalSales)*100 < 5 ? '⚠️ Below 5% target' : '✅ Healthy') : ''}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <h4 class="font-semibold text-gray-800 text-sm"><i class="fas fa-lightbulb text-yellow-500 mr-1"></i> My Recommendation</h4>
+                <p class="text-sm text-gray-700 mt-1">
+                    ${varPct < 0 ? `
+                        <strong>Revenue Focus:</strong> Sales are ${Math.abs(varPct).toFixed(1)}% below budget. Consider reviewing pricing strategy in the <strong>${worstRegion}</strong> region and increasing marketing spend on <strong>${bestProduct}</strong> products.
+                    ` : `
+                        <strong>Cost Optimization:</strong> Sales are performing well (${varPct.toFixed(1)}% above budget). However, OpEx/Sales at ${totalSales ? ((totalOpEx/totalSales)*100).toFixed(1) : 0}% suggests room for cost optimization — particularly in the <strong>${worstRegion}</strong> region where sales are lowest.
+                    `}
+                    ${totalSales ? ((npAt/totalSales)*100 < 5 ? ' Focus on improving net margins to 5%+ through better cost control.' : ' Maintain current cost discipline while driving top-line growth.') : ''}
+                </p>
+            </div>
+        `;
+    }
+
+    // ============================================================
+    // 9. CHARTS (using Chart.js)
+    // ============================================================
+    let salesChartInstance = null, marginChartInstance = null, varianceChartInstance = null;
+
+    function renderCharts(actual, budget) {
+        if (salesChartInstance) { salesChartInstance.destroy(); salesChartInstance = null; }
+        if (marginChartInstance) { marginChartInstance.destroy(); marginChartInstance = null; }
+        if (varianceChartInstance) { varianceChartInstance.destroy(); varianceChartInstance = null; }
+
+        if (!actual.length || !budget.length) return;
+
+        const monthOrder = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        const salesData = monthOrder.map(m => {
+            const a = actual.filter(r => r.Month === m);
+            return a.reduce((s,r) => s + r.Sales, 0);
+        });
+        const budgetDataM = monthOrder.map(m => {
+            const b = budget.filter(r => r.Month === m);
+            return b.reduce((s,r) => s + r.Sales_Budget, 0);
+        });
+        const gpData = monthOrder.map(m => {
+            const a = actual.filter(r => r.Month === m);
+            const sales = a.reduce((s,r) => s + r.Sales, 0);
+            const cogs = a.reduce((s,r) => s + r.Cost_of_Goods_Sold, 0);
+            return sales - cogs;
+        });
+        const marginPct = monthOrder.map((m,i) => salesData[i] ? (gpData[i] / salesData[i]) * 100 : 0);
+        const varianceData = monthOrder.map((m,i) => salesData[i] - budgetDataM[i]);
+
+        const ctx1 = document.getElementById('salesChart').getContext('2d');
+        salesChartInstance = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: monthOrder,
+                datasets: [
+                    { label: 'Actual Sales', data: salesData, backgroundColor: 'rgba(59,130,246,0.6)', borderColor: '#3b82f6', borderWidth: 2 },
+                    { label: 'Budget Sales', data: budgetDataM, backgroundColor: 'rgba(16,185,129,0.4)', borderColor: '#10b981', borderWidth: 2, borderDash: [5,5] }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { title: { display: true, text: 'Sales: Actual vs Budget (₹ Lakhs)', font: { size: 14 } } },
+                scales: { y: { beginAtZero: true, ticks: { callback: v => '₹' + (v/100000).toFixed(0) + 'L' } } }
+            }
+        });
+
+        const ctx2 = document.getElementById('marginChart').getContext('2d');
+        marginChartInstance = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: monthOrder,
+                datasets: [
+                    { label: 'Gross Margin %', data: marginPct, borderColor: '#8b5cf6', backgroundColor: 'rgba(139,92,246,0.1)', fill: true, tension: 0.3 },
+                    { label: 'Net Profit %', data: monthOrder.map(m => {
+                        const a = actual.filter(r => r.Month === m);
+                        const sales = a.reduce((s,r) => s + r.Sales, 0);
+                        const cogs = a.reduce((s,r) => s + r.Cost_of_Goods_Sold, 0);
+                        const opEx = a.reduce((s,r) => s + r.Operating_Expenses, 0);
+                        const other = a.reduce((s,r) => s + r.Other_Income, 0);
+                        const interest = a.reduce((s,r) => s + r.Interest_Expense, 0);
+                        const np = (sales - cogs - opEx + other - interest) * (1 - (a.length ? a[0].Tax_Rate : 0.25));
+                        return sales ? (np/sales)*100 : 0;
+                    }), borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.1)', fill: true, tension: 0.3 }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { title: { display: true, text: 'Margin Trends (%)', font: { size: 14 } } },
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+
+        const ctx3 = document.getElementById('varianceChart').getContext('2d');
+        varianceChartInstance = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: monthOrder,
+                datasets: [
+                    { label: 'Sales Variance', data: varianceData, backgroundColor: varianceData.map(v => v >= 0 ? 'rgba(16,185,129,0.6)' : 'rgba(239,68,68,0.6)'), borderColor: varianceData.map(v => v >= 0 ? '#10b981' : '#ef4444'), borderWidth: 1 }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: { title: { display: true, text: 'Monthly Sales Variance (Actual - Budget)', font: { size: 14 } } },
+                scales: { y: { ticks: { callback: v => '₹' + (v/100000).toFixed(0) + 'L' } } }
+            }
+        });
+    }
+
+    // ============================================================
+    // 10. DOWNLOAD TEMPLATES (NEW)
+    // ============================================================
+    function downloadTemplate(type) {
+        let content = '';
+        let filename = '';
+        if (type === 'actual') {
+            content = 'Year,Month,Region,Product_Line,Sales,Cost_of_Goods_Sold,Operating_Expenses,Marketing_Expenses,R&D_Expenses,Admin_Expenses,Other_Income,Interest_Expense,Tax_Rate\n';
+            filename = 'template_actual_data.csv';
+        } else if (type === 'budget') {
+            content = 'Year,Month,Region,Product_Line,Sales_Budget,COGS_Budget,OpEx_Budget\n';
+            filename = 'template_budget_data.csv';
+        }
+        const blob = new Blob([content], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+    }
+
+    // ============================================================
+    // 11. INIT
+    // ============================================================
+    document.addEventListener('DOMContentLoaded', loadData);
+
+    // Make functions globally accessible
+    window.renderAll = renderAll;
+    window.switchTab = switchTab;
+    window.resetFilters = resetFilters;
+    window.downloadTemplate = downloadTemplate;
+</script>
+</body>
+</html>
