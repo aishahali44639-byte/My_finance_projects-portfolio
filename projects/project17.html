@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project #17 – Indian EV Ecosystem Report | Shah Ali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        body {
+            background: #f1f5f9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 2rem 1rem;
+        }
+        .report-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            padding: 2.5rem 2.5rem;
+        }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+            border-bottom: 4px solid #2563eb;
+            padding-bottom: 0.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+        .sub-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+            margin: 1rem 0 1.5rem 0;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .data-table thead {
+            background: #f1f5f9;
+        }
+        .data-table th {
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        .data-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .data-table tbody tr:hover {
+            background: #f8fafc;
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+        .kpi-card {
+            background: #f8fafc;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        .kpi-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+        .kpi-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 0.04em;
+            margin-top: 0.1rem;
+        }
+        .insight-box {
+            background: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.25rem 0;
+        }
+        .insight-box strong {
+            color: #92400e;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .badge-green {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .badge-red {
+            background: #fecaca;
+            color: #991b1b;
+        }
+        .badge-yellow {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .badge-blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .header-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .print-only {
+            display: none;
+        }
+        @media print {
+            body {
+                background: white;
+                padding: 0.2in;
+            }
+            .report-container {
+                box-shadow: none;
+                padding: 0;
+                border-radius: 0;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .section-title {
+                break-after: avoid;
+            }
+            .data-table {
+                break-inside: auto;
+            }
+        }
+        @media (max-width: 640px) {
+            .report-container {
+                padding: 1.25rem;
+            }
+            .kpi-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .data-table {
+                font-size: 0.75rem;
+            }
+            .data-table th,
+            .data-table td {
+                padding: 0.4rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-container" id="report">
+
+        <!-- Header -->
+        <div class="header-line">
+            <div>
+                <h1 class="text-3xl font-extrabold text-gray-800">
+                    <i class="fas fa-charging-station text-green-600 mr-2"></i>
+                    Indian EV Ecosystem
+                </h1>
+                <p class="text-gray-500 text-sm mt-1">
+                    Deep-Dive Sector Research Report · FY2025–26 &amp; Early FY2027
+                </p>
+            </div>
+            <div class="text-right text-sm text-gray-500">
+                <span class="font-semibold text-gray-700">Shah Ali</span><br />
+                CA Finalist · FP&A · Research
+                <div class="text-xs text-gray-400 mt-1">
+                    <i class="far fa-calendar-alt mr-1"></i> Updated: July 2026
+                </div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-6">
+            <h2 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+                <i class="fas fa-bullseye text-blue-600"></i> Executive Summary
+            </h2>
+            <p class="text-gray-700 text-sm leading-relaxed mt-2">
+                India's electric vehicle market crossed a decisive inflection point in FY2025–26, with
+                <strong>2.55 million EVs sold</strong> — a 25% year-on-year increase. EV penetration reached
+                <strong>8.3%</strong> of total vehicle registrations, up from 7.5% the previous year, while the
+                overall automotive market grew 13.2% to 30.84 million vehicles. The EV market is growing
+                <strong>nearly four times faster</strong> than the broader auto industry, with a 52% CAGR over
+                the past five years.
+            </p>
+            <div class="kpi-grid mt-4">
+                <div class="kpi-card bg-white">
+                    <div class="kpi-number">2.55M</div>
+                    <div class="kpi-label">Total EV Sales (FY26)</div>
+                </div>
+                <div class="kpi-card bg-white">
+                    <div class="kpi-number">8.3%</div>
+                    <div class="kpi-label">EV Penetration</div>
+                </div>
+                <div class="kpi-card bg-white">
+                    <div class="kpi-number">25%</div>
+                    <div class="kpi-label">YoY Growth</div>
+                </div>
+                <div class="kpi-card bg-white">
+                    <div class="kpi-number">52%</div>
+                    <div class="kpi-label">5‑Year CAGR</div>
+                </div>
+            </div>
+            <p class="text-gray-700 text-sm leading-relaxed mt-2">
+                <strong>Key findings:</strong> Two- and three-wheelers dominate (91% of sales). Passenger EVs
+                nearly doubled (83.6% growth). Ola Electric's market share collapsed from ~30% to 5.4%.
+                Battery manufacturing has stalled – only 2.8% of PLI ACC target commissioned. Charging
+                infrastructure lags badly – only 14,450 of 30,000+ public chargers are operational.
+            </p>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 1. MARKET OVERVIEW                                             -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">1. 📊 Market Overview</h2>
+
+        <h3 class="sub-title">1.1 Current Market Size (FY2025–26)</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Total EV Sales</td><td><strong>2.55 million units</strong></td><td>IESA Report</td></tr>
+                <tr><td>Year‑on‑Year Growth</td><td><strong>25%</strong></td><td>IESA Report</td></tr>
+                <tr><td>EV Penetration</td><td><strong>8.3%</strong> of total registrations</td><td>IESA Report</td></tr>
+                <tr><td>Total Vehicle Registrations</td><td><strong>30.84 million</strong></td><td>IESA Report</td></tr>
+                <tr><td>EV Market Growth (5‑Year CAGR)</td><td><strong>52%</strong></td><td>IESA Report</td></tr>
+                <tr><td>Overall Auto Market Growth (5‑Year CAGR)</td><td><strong>12.5%</strong></td><td>IESA Report</td></tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">1.2 Segment‑Wise Breakdown (FY2025–26)</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Segment</th><th>Units Sold</th><th>Share of EV Market</th><th>YoY Growth</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Electric Two‑Wheelers (E2W)</td><td>14.68 lakh</td><td>57%</td><td>21%</td></tr>
+                <tr><td>Electric Three‑Wheelers (E3W)</td><td>8.31 lakh</td><td>34%</td><td>19%</td></tr>
+                <tr><td>Electric Four‑Wheelers (E4W)</td><td>1,99,923</td><td>8%</td><td>84%</td></tr>
+                <tr><td>Electric Buses</td><td>~4,158</td><td>&lt;1%</td><td>25%</td></tr>
+                <tr><td>Electric Trucks</td><td>~1,500</td><td>&lt;1%</td><td>Emerging</td></tr>
+            </tbody>
+        </table>
+        <div class="insight-box">
+            <strong>💡 Key Insight:</strong> Two‑ and three‑wheelers together account for <strong>&gt;91%</strong>
+            of all EV sales in India. Electric cars, despite media attention, remain a niche at just
+            <strong>4.2%</strong> of new car sales.
+        </div>
+
+        <h3 class="sub-title">1.3 Recent Monthly Trends (2026)</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 ml-2">
+            <li>EV penetration hit a record <strong>10.7%</strong> in May 2026</li>
+            <li>Monthly EV sales crossed 200,000 units <strong>five times</strong> in FY2026</li>
+            <li>March 2026 was the strongest month ever with <strong>280,093 units</strong> sold</li>
+            <li>EV penetration is projected to reach <strong>9.5–10%</strong> in FY2026–27</li>
+        </ul>
+
+        <h3 class="sub-title">1.4 Market Forecasts</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Scenario</th><th>2025</th><th>2030</th><th>2032</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Annual EV Sales (NEV Scenario)</td><td>2.6M</td><td>—</td><td><strong>30.4M</strong></td></tr>
+                <tr><td>EV Component Market</td><td>₹41,000 Cr</td><td>—</td><td><strong>₹3,02,000 Cr</strong></td></tr>
+                <tr><td>Battery Demand</td><td>19 GWh</td><td>—</td><td><strong>362 GWh</strong></td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================ -->
+        <!-- 2. POLICY & REGULATORY FRAMEWORK                              -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">2. 🏛️ Policy &amp; Regulatory Framework</h2>
+
+        <h3 class="sub-title">2.1 PM E‑Drive Scheme (Replaced FAME)</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Metric</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Total Outlay</td><td><strong>₹10,900 Crore</strong></td></tr>
+                <tr><td>Launch Date</td><td>October 1, 2024</td></tr>
+                <tr><td>Original Duration</td><td>FY25–FY26</td></tr>
+                <tr><td>Extended Until</td><td><strong>2027–28</strong></td></tr>
+                <tr><td>Status</td><td>Extended; E2W/E3W subsidies end March 2026</td></tr>
+            </tbody>
+        </table>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 ml-2">
+            <li><strong>₹422 crore</strong> disbursed for E2W and E3W (as of April 2026)</li>
+            <li><strong>₹10,000</strong> subsidy per E2W (halved in second year)</li>
+            <li><strong>₹2,000 crore</strong> allocated for <strong>72,000</strong> public charging stations</li>
+            <li>PM E‑Drive also covers e‑trucks, e‑ambulances, and e‑buses</li>
+        </ul>
+        <div class="insight-box">
+            <strong>📌 The Extension Context:</strong> About half of the scheme's funds remained unused,
+            prompting the extension. The scheme will now end once the full corpus is exhausted. This provides
+            a longer runway for state transport bodies and private operators.
+        </div>
+
+        <h3 class="sub-title">2.2 PLI Auto Scheme</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Metric</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Total Outlay</td><td><strong>₹25,938 Crore</strong></td></tr>
+                <tr><td>Cumulative Investment</td><td><strong>₹35,657 Crore</strong> ($4.3B)</td></tr>
+                <tr><td>Incentives Disbursed</td><td><strong>₹2,321.94 Cr</strong> (as of Dec 2025)</td></tr>
+                <tr><td>EVs Supported</td><td><strong>13.6 lakh units</strong></td></tr>
+                <tr><td>Employment Generated</td><td><strong>~49,000 jobs</strong></td></tr>
+                <tr><td>FY27 Allocation</td><td><strong>₹5,940 Crore</strong> (doubled from FY26)</td></tr>
+            </tbody>
+        </table>
+        <p class="text-sm text-gray-700 mt-2">
+            <strong>Top PLI Beneficiaries (Approved Companies):</strong>
+            Champion OEM category – Tata Motors, Mahindra &amp; Mahindra, Maruti Suzuki, Hyundai, Kia, Bajaj Auto,
+            Hero MotoCorp, Ola Electric, and others.<br />
+            <strong>Incentive Structure:</strong> 13–18% for EV/hydrogen fuel cell components; 8–13% for other
+            advanced automotive technology products; minimum 50% domestic value addition required.
+        </p>
+
+        <h3 class="sub-title">2.3 PLI Advanced Chemistry Cell (ACC) Scheme</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Metric</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Total Outlay</td><td><strong>₹18,100 Crore</strong> ($2.08B)</td></tr>
+                <tr><td>Target Capacity</td><td><strong>50 GWh</strong> by 2025</td></tr>
+                <tr><td>Capacity Commissioned</td><td><span class="badge badge-red">Only 1.4 GWh (2.8%)</span></td></tr>
+                <tr><td>Capacity Under Development</td><td>18.6 GWh</td></tr>
+                <tr><td>No Development</td><td>20 GWh</td></tr>
+                <tr><td>Jobs Created vs Target</td><td>1,118 vs 1.03M (0.12%)</td></tr>
+                <tr><td>Investment vs Target</td><td>₹28,700 Cr vs ₹1,12,500 Cr (25.6%)</td></tr>
+            </tbody>
+        </table>
+        <p class="text-sm text-gray-700 mt-2">
+            <strong>Key Beneficiaries:</strong> Ola Electric (20 GWh allocation – 1.4 GWh commissioned),
+            Reliance New Energy (10 GWh – on track), Rajesh Exports (5 GWh – status unclear).<br />
+            <strong>Bottlenecks:</strong> Stringent domestic value addition requirements, aggressive two‑year
+            timeline, visa approval delays for Chinese technical specialists.
+        </p>
+        <div class="insight-box">
+            <strong>⚠️ Critical Insight:</strong> The ACC PLI scheme has achieved only <strong>2.8%</strong> of its
+            50 GWh target. This is the single biggest supply‑side risk for India's EV ambitions.
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 3. COMPETITIVE LANDSCAPE                                      -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">3. 🏎️ Competitive Landscape</h2>
+
+        <h3 class="sub-title">3.1 Electric Two‑Wheelers (E2W)</h3>
+        <p class="text-sm text-gray-600">FY2026 Total Sales: <strong>14,01,818 units</strong> (up 21.81% YoY)</p>
+        <table class="data-table">
+            <thead>
+                <tr><th>Rank</th><th>Manufacturer</th><th>FY2026 Sales</th><th>Market Share</th><th>YoY Growth</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><strong>TVS Motor</strong></td><td>3,41,513</td><td>24%</td><td class="badge-green">+43.54%</td></tr>
+                <tr><td>2</td><td><strong>Bajaj Auto</strong></td><td>2,89,349</td><td>20%</td><td class="badge-green">+25.17%</td></tr>
+                <tr><td>3</td><td><strong>Ather Energy</strong></td><td>2,39,178</td><td>17%</td><td class="badge-green">+82.34%</td></tr>
+                <tr><td>4</td><td><strong>Ola Electric</strong></td><td>1,64,295</td><td>11%</td><td class="badge-red"><strong>-52.28%</strong></td></tr>
+                <tr><td>5</td><td><strong>Hero MotoCorp</strong></td><td>1,44,330</td><td>10%</td><td class="badge-green">+196.13%</td></tr>
+            </tbody>
+        </table>
+        <div class="insight-box">
+            <strong>📉 The Ola Electric Collapse:</strong> Ola's market share fell from ~30% to 5.4% in March 2026.
+            FY26 sales (164,295) were less than half of FY25 sales (344,000). Reasons: service issues, quality
+            concerns, customer dissatisfaction.
+        </div>
+
+        <h3 class="sub-title">3.2 Electric Three‑Wheelers (E3W)</h3>
+        <p class="text-sm text-gray-600">FY2026 Total Sales: <strong>830,819 units</strong> (up 19% YoY)</p>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 ml-2">
+            <li><strong>E3W share of total 3W market:</strong> 61% (up from 57%)</li>
+            <li><strong>E3W share of EV market:</strong> 34%</li>
+            <li><strong>L5 segment (cargo/passenger):</strong> Consolidated – Mahindra Last Mile (34%) and Bajaj Auto (33%) command 67% market share</li>
+            <li><strong>L3 segment (e‑rickshaw):</strong> Highly fragmented – top 5 manufacturers account for only 17%</li>
+            <li><strong>TVS Motor</strong> fastest‑growing – L5 volumes surged <strong>1,603%</strong> YoY</li>
+            <li>December 2025: <strong>88,276 units</strong> (highest monthly sales ever)</li>
+        </ul>
+
+        <h3 class="sub-title">3.3 Electric Passenger Vehicles (E4W)</h3>
+        <p class="text-sm text-gray-600">FY2026 Total Sales: <strong>1,99,923 units</strong> (up 83.63% YoY)</p>
+        <table class="data-table">
+            <thead>
+                <tr><th>Rank</th><th>Manufacturer</th><th>FY2026 Sales</th><th>Market Share</th><th>YoY Growth</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><strong>Tata Motors</strong></td><td>78,811</td><td>39.4%</td><td class="badge-green">+35.9%</td></tr>
+                <tr><td>2</td><td><strong>JSW MG Motor</strong></td><td>53,089</td><td>26.6%</td><td class="badge-green">+73.7%</td></tr>
+                <tr><td>3</td><td><strong>Mahindra &amp; Mahindra</strong></td><td>42,721</td><td>21.4%</td><td class="badge-green"><strong>+407.0%</strong></td></tr>
+                <tr><td>4</td><td>Hyundai</td><td>5,885</td><td>2.9%</td><td class="badge-green">+137.6%</td></tr>
+                <tr><td>5</td><td>BYD India</td><td>5,361</td><td>2.7%</td><td class="badge-green">+54.0%</td></tr>
+                <tr><td>6</td><td>Kia India</td><td>3,738</td><td>1.9%</td><td class="badge-green"><strong>+794.3%</strong></td></tr>
+                <tr><td>7</td><td>BMW</td><td>3,537</td><td>1.8%</td><td class="badge-green">+123.9%</td></tr>
+                <tr><td>8</td><td>VinFast</td><td>2,390</td><td>1.2%</td><td>New</td></tr>
+                <tr><td>9</td><td>Maruti Suzuki</td><td>1,416</td><td>0.7%</td><td>New</td></tr>
+                <tr><td>10</td><td>Tesla</td><td>342</td><td>0.2%</td><td>New</td></tr>
+            </tbody>
+        </table>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1 ml-2">
+            <li><strong>Top 3 OEMs (Tata, MG, Mahindra) captured 87.3%</strong> of the market</li>
+            <li>Tata Motors crossed <strong>10,000</strong> monthly EV sales for the first time in May 2026 (10,231 units)</li>
+            <li>Mahindra posted the highest growth among major players at <strong>147%</strong> in H1 2026</li>
+            <li>EV share in car sales reached <strong>4.2%</strong>, up from 2.6% in FY2025</li>
+        </ul>
+
+        <h3 class="sub-title">3.4 Electric Buses</h3>
+        <p class="text-sm text-gray-600">FY2026 Total Sales: <strong>~4,158 units</strong> (up 25% YoY)</p>
+        <table class="data-table">
+            <thead>
+                <tr><th>Rank</th><th>Manufacturer</th><th>H1 2026 Sales</th><th>Market Share</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td><strong>Switch Mobility</strong></td><td>830</td><td>28.2%</td></tr>
+                <tr><td>2</td><td><strong>JBM Auto</strong></td><td>635</td><td>21.6%</td></tr>
+                <tr><td>3</td><td><strong>PMI Electro</strong></td><td>574</td><td>19.5%</td></tr>
+                <tr><td>4</td><td><strong>Olectra Greentech</strong></td><td>280</td><td>9.5%</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================ -->
+        <!-- 4. CHARGING INFRASTRUCTURE                                    -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">4. ⚡ Charging Infrastructure: The Bottleneck</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr><th>Metric</th><th>Value</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Public Chargers (Aug 2025)</td><td><strong>30,000+</strong></td></tr>
+                <tr><td>Operational Chargers</td><td><span class="badge badge-red"><strong>14,450</strong></span> (less than half)</td></tr>
+                <tr><td>Non‑Operational Chargers</td><td>15,550</td></tr>
+                <tr><td>Charger Utilization</td><td><strong>Below 10%</strong></td></tr>
+                <tr><td>Target Under PM E‑Drive</td><td><strong>72,000 by 2028</strong></td></tr>
+                <tr><td>Required by 2030 (CII Study)</td><td><strong>1.32 million</strong></td></tr>
+            </tbody>
+        </table>
+
+        <div class="insight-box">
+            <strong>📍 The Irony:</strong> EV adoption is surging in non‑metros. Jaipur now sees a quarter of all
+            car sales from EVs, and for entry‑level models like the Tata Tiago EV, nearly half of sales are
+            <strong>outside the top 20 cities</strong>. Yet <strong>62%</strong> of all public chargers are
+            concentrated in just three metros: Bengaluru, Mumbai, and Delhi.
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 5. BATTERY & COMPONENT ECOSYSTEM                              -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">5. 🔋 Battery &amp; Component Ecosystem</h2>
+
+        <h3 class="sub-title">5.1 Battery Demand &amp; Forecast</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Metric</th><th>2025</th><th>2032 (NEV)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Battery Demand</td><td>~19 GWh</td><td><strong>362 GWh</strong></td></tr>
+                <tr><td>Component Market</td><td>₹41,000 Cr</td><td><strong>₹3,02,000 Cr</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">5.2 Battery Demand by Segment (2025)</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Segment</th><th>Share</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Electric Four‑Wheelers</td><td>40%</td></tr>
+                <tr><td>Electric Three‑Wheelers</td><td>27%</td></tr>
+                <tr><td>Electric Two‑Wheelers</td><td>23%</td></tr>
+                <tr><td>Electric Buses</td><td>7.8%</td></tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">5.3 Component Market Breakdown (2025)</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Component</th><th>Share</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Battery Packs</td><td>52%</td></tr>
+                <tr><td>Motors</td><td>22%</td></tr>
+                <tr><td>Inverters</td><td>12%</td></tr>
+                <tr><td>Battery Management Systems</td><td>11%</td></tr>
+                <tr><td>DC‑DC Converters</td><td>3%</td></tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================ -->
+        <!-- 6. FINANCIAL PERFORMANCE                                      -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">6. 💰 Financial Performance</h2>
+
+        <h3 class="sub-title">6.1 PLI Auto Incentive Impact</h3>
+        <table class="data-table">
+            <thead>
+                <tr><th>Company</th><th>PLI Incentives Received</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Bajaj Auto</strong></td><td>₹625.65 Cr (FY2025–26 alone)</td></tr>
+                <tr><td><strong>Tata Motors</strong></td><td>₹545.31 Cr</td></tr>
+                <tr><td><strong>Ola Electric</strong></td><td>₹366.78 Cr</td></tr>
+            </tbody>
+        </table>
+
+        <h3 class="sub-title">6.2 Who's Profitable?</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+            <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                <p class="font-semibold text-green-800"><i class="fas fa-check-circle mr-1"></i> Positive EBITDA</p>
+                <ul class="text-sm text-gray-700 list-disc list-inside mt-1">
+                    <li><strong>Tata Motors (EV)</strong> — one of the few with positive EV EBITDA</li>
+                    <li><strong>Olectra Greentech</strong> — consistent revenue growth</li>
+                </ul>
+            </div>
+            <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                <p class="font-semibold text-red-800"><i class="fas fa-exclamation-triangle mr-1"></i> The Loss‑Makers</p>
+                <ul class="text-sm text-gray-700 list-disc list-inside mt-1">
+                    <li><strong>Ola Electric</strong> — revenue down 43% YoY in Q2 FY26, losses widening</li>
+                    <li><strong>JSW MG Motor</strong> — losses nearly doubled to ₹1,096 Cr in FY25</li>
+                    <li>Most pure‑play EV startups remain deep in the red</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 7. KEY CHALLENGES                                             -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">7. ⚠️ Key Challenges &amp; Risks</h2>
+
+        <div class="space-y-3 text-sm text-gray-700">
+            <div class="border-l-4 border-red-500 pl-4 py-1 bg-red-50/30 rounded-r">
+                <strong class="text-red-700">Charging Infrastructure Bottleneck</strong>
+                <p>30,000 chargers on paper → 14,450 operational. Utilization below 10%. Fragmented apps – consumers need multiple apps to access different charging networks.</p>
+            </div>
+            <div class="border-l-4 border-orange-500 pl-4 py-1 bg-orange-50/30 rounded-r">
+                <strong class="text-orange-700">Battery Manufacturing Gap</strong>
+                <p>PLI ACC scheme has achieved only <strong>2.8%</strong> of its 50 GWh target. Ola Electric faces ₹12.5 lakh/day penalties for delays. India remains heavily dependent on imported lithium‑ion cells, primarily from China.</p>
+            </div>
+            <div class="border-l-4 border-yellow-600 pl-4 py-1 bg-yellow-50/30 rounded-r">
+                <strong class="text-yellow-700">Profitability Crisis</strong>
+                <p>Most EV companies are burning cash. Subsidies for E2W and E3W are being phased out from <strong>March 2026</strong>.</p>
+            </div>
+            <div class="border-l-4 border-purple-600 pl-4 py-1 bg-purple-50/30 rounded-r">
+                <strong class="text-purple-700">Subsidy Cliff (March 2026)</strong>
+                <p>The biggest near‑term risk is the end of subsidies for two‑ and three‑wheelers. Manufacturers will need to prove they can compete on pricing and scale rather than policy support.</p>
+            </div>
+            <div class="border-l-4 border-gray-600 pl-4 py-1 bg-gray-50/30 rounded-r">
+                <strong class="text-gray-700">Rare Earth Metals Shortage</strong>
+                <p>Chinese export restrictions on rare earth metals disrupted India's EV industry in FY26, affecting production.</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 8. FUTURE OUTLOOK                                             -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">8. 🔮 Future Outlook: 2026–2035</h2>
+
+        <table class="data-table">
+            <thead>
+                <tr><th>Metric</th><th>2030</th><th>2032</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>EV Car Penetration</td><td>19%</td><td>—</td></tr>
+                <tr><td>Annual EV Sales (NEV Scenario)</td><td>10M (target)</td><td><strong>30.4M</strong></td></tr>
+                <tr><td>EV Component Market</td><td>—</td><td><strong>₹3,02,000 Cr</strong></td></tr>
+                <tr><td>Battery Demand</td><td>—</td><td><strong>362 GWh</strong></td></tr>
+            </tbody>
+        </table>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+            <div class="bg-blue-50 p-4 rounded-xl border border-blue-200">
+                <p class="font-semibold text-blue-800">1. Mass Adoption</p>
+                <p class="text-sm text-gray-600">Battery costs continue to fall, making affordable EVs mainstream.</p>
+            </div>
+            <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-200">
+                <p class="font-semibold text-indigo-800">2. Fleet Electrification</p>
+                <p class="text-sm text-gray-600">Commercial vehicles, buses, and logistics – less subsidy‑dependent.</p>
+            </div>
+            <div class="bg-purple-50 p-4 rounded-xl border border-purple-200">
+                <p class="font-semibold text-purple-800">3. Battery Innovation</p>
+                <p class="text-sm text-gray-600">Local manufacturing, recycling, and next‑gen chemistries.</p>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- 9. INVESTMENT THEMES                                          -->
+        <!-- ============================================================ -->
+        <h2 class="section-title">9. 💡 Investment Themes &amp; Conclusion</h2>
+
+        <div class="bg-gray-50 rounded-xl p-5 border border-gray-200">
+            <p class="text-gray-700 text-sm leading-relaxed">
+                <strong>Thesis:</strong> India's EV ecosystem has crossed the critical inflection point from
+                policy‑driven adoption to <strong>market‑driven growth</strong>. However, the transition will be
+                bumpy – requiring massive investments in charging infrastructure, battery manufacturing, and
+                supply chain localization.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div>
+                    <p class="font-semibold text-gray-800"><i class="fas fa-arrow-up text-green-600 mr-1"></i> Key Investment Themes</p>
+                    <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
+                        <li><strong>Charging Infrastructure</strong> – ₹2,000 Cr allocated for 72,000 chargers</li>
+                        <li><strong>Battery Manufacturing</strong> – PLI ACC scheme, domestic cell production</li>
+                        <li><strong>Commercial EV Adoption</strong> – buses, trucks, logistics</li>
+                        <li><strong>Component Localization</strong> – ₹41,000 Cr → ₹3,02,000 Cr by 2032</li>
+                        <li><strong>Consolidation Play</strong> – weaker players will exit or merge</li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-semibold text-gray-800"><i class="fas fa-flag-checkered text-red-600 mr-1"></i> Companies to Watch</p>
+                    <ul class="text-sm text-gray-700 list-disc list-inside space-y-1">
+                        <li><strong>Tata Motors</strong> – market leader, positive EBITDA</li>
+                        <li><strong>Mahindra &amp; Mahindra</strong> – 407% growth in FY26</li>
+                        <li><strong>Olectra Greentech</strong> – consistent revenue growth</li>
+                        <li><strong>TVS Motor</strong> – E2W market leader</li>
+                        <li><strong>Bajaj Auto</strong> – top PLI beneficiary</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p class="font-semibold text-red-700"><i class="fas fa-exclamation-triangle mr-1"></i> Red Flags</p>
+                <ul class="text-sm text-gray-700 list-disc list-inside grid grid-cols-1 sm:grid-cols-2 gap-1">
+                    <li>Subsidy phaseout (March 2026)</li>
+                    <li>Battery manufacturing delays – 97.2% of PLI ACC target unmet</li>
+                    <li>Charging infrastructure gap – only 14,450 of 30,000+ chargers operational</li>
+                    <li>Rising losses – Ola, MG Motor burning cash</li>
+                    <li>Rare earth metals dependency</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- FOOTER – DATA SOURCES                                         -->
+        <!-- ============================================================ -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <h3 class="text-sm font-semibold text-gray-600"><i class="fas fa-book-open mr-2"></i>Data Sources</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-1 text-xs text-gray-500 mt-1">
+                <div><span class="font-medium">IESA</span> – FY2025–26 sales data, segment breakdown, forecasts</div>
+                <div><span class="font-medium">FADA</span> – Retail sales data, market share analysis</div>
+                <div><span class="font-medium">PLI Auto Scheme (Govt. of India)</span> – Investment, incentives</div>
+                <div><span class="font-medium">PM E‑Drive Scheme</span> – Policy framework, allocations</div>
+                <div><span class="font-medium">PLI ACC (IEEFA/JMK Research)</span> – Battery manufacturing progress</div>
+                <div><span class="font-medium">Vahan Portal</span> – Registration data</div>
+                <div><span class="font-medium">JMK Research</span> – EV market projections</div>
+                <div><span class="font-medium">IEEFA</span> – Battery PLI scheme assessment</div>
+            </div>
+            <p class="text-xs text-gray-400 mt-3 text-center">
+                Report prepared by <span class="font-medium text-gray-600">Shah Ali</span> · CA Finalist · FP&A · Research<br />
+                For portfolio and educational purposes only. Data as of July 2026.
+            </p>
+        </div>
+
+    </div>
+    <!-- end report-container -->
+
+    <!-- Print / Download helper (no-print) -->
+    <div class="max-w-1200 mx-auto mt-6 flex flex-wrap justify-center gap-3 no-print">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition shadow-sm flex items-center gap-2">
+            <i class="fas fa-print"></i> Print / Save as PDF
+        </button>
+        <button onclick="document.getElementById('report').style.padding='1.5rem'; window.print(); setTimeout(() => document.getElementById('report').style.padding='2.5rem', 500);" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-5 py-2.5 rounded-lg text-sm font-medium transition shadow-sm flex items-center gap-2">
+            <i class="fas fa-file-pdf"></i> Print with Narrow Margins
+        </button>
+        <a href="#" onclick="const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='project17_Indian_EV_Report.html'; a.click(); return false;" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition shadow-sm flex items-center gap-2">
+            <i class="fas fa-download"></i> Download HTML File
+        </a>
+    </div>
+
+</body>
+</html>
